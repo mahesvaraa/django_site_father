@@ -1,0 +1,56 @@
+{% load static %}
+{% block header %}
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="/dog_site/templates/index.html">
+                                <img src={% static "assets/img/logo.png" %} alt="">
+                            </a>
+                        </div>
+                        <!-- logo -->
+
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li {% if '/' == request.path %}class="current-list-item"{% endif %}><a
+                                        href="{% url 'home' %}">Главная</a></li>
+                                <li {% if 'dogs' in request.path %}class="current-list-item"{% endif %}><a
+                                        href="{% url 'dogs' %}">Собаки</a>
+                                <li {% if 'news' in request.path %}class="current-list-item"{% endif %}><a
+                                        href="{% url 'news' %}">Новости</a></li>
+                                <li {% if 'receipt' in request.path %}class="current-list-item"{% endif %}><a
+                                        href={% url 'receipt' %}>Заявка на щенка</a></li>
+                                <li {% if 'about' in request.path %}class="current-list-item"{% endif %}><a
+                                        href={% url 'about' %}>О нас</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'photos' %}">Галлерея</a></li>
+                                        <li><a href="{% url 'achivements' %}">Наши достижения</a></li>
+                                        <li><a href="/dog_site/templates/single-dog.html">Single Product</a></li>
+                                        <li><a href="/dog_site/templates/receipt.html">Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li {% if 'contacts' in request.path %}class="current-list-item"{% endif %}><a
+                                        href="{% url 'contacts' %}">Контакты</a></li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="/dog_site/templates/receipt.html"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i
+                                                class="fas fa-search"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
