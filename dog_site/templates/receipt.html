@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Оставить заявку</p>
+                        <h1>Заявка на щенка</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- cart -->
+    <div class="cart-section mt-150 mb-150">
+        <div class="container">
+            <div class="form-bg">
+                <div class="container" style="max-width:60%">
+
+                    <div class="form-container">
+                        <form type="POST" id="fruitkha-contact" method="post">
+                            <h3>Контактная информация</h3>
+                            <div class="form-group">
+                                <h6 for="name">Ваше Имя (обязательно):</h6>
+                                <input type="text" id="name" name="name" class="form-control" required>
+
+                                <h6 for="email">Ваш e-mail (обязательно):</h6>
+                                <input type="text" id="email" name="email" class="form-control" required>
+
+                                <h6 for="phone">Ваш номер телефона (обязательно):</h6>
+                                <input type="text" id="phone" name="phone" class="form-control" required>
+                            </div>
+                            <h3>Выбор породы</h3>
+                            <div class="form-group ">
+                                <h6 for="subject">Тема (например, "Хочу приобрести щенка..."):</h6>
+                                <input type="text" id="subject" name="subject" class="form-control">
+
+                                <h6>Меня интересует порода:</h6>
+                                <div class="form_radio_group">
+                                    <div class="form_radio_group-item">
+                                        <input id="yakutian_laika" type="radio" name="breed" value="yakutian_laika"
+                                               checked>
+                                        <label for="yakutian_laika">Якутская лайка</label>
+                                        <input id="akita" type="radio" name="breed" value="akita">
+                                        <label for="akita">Акита</label>
+                                        <input id="kfl" type="radio" name="breed" value="kfl">
+                                        <label for="kfl">КФЛ</label>
+                                        <input id="siberian_husky" type="radio" name="breed" value="siberian_husky">
+                                        <label for="siberian_husky">Сибирский хаски</label>
+                                    </div>
+                                </div>
+                                <h6>С особенностями породы:</h6>
+                                <div class="form_radio_group">
+                                    <div class="form_radio_group-item">
+                                        <input id="familiar" type="radio" name="breed_features" value="familiar">
+                                        <label for="familiar">Знаком</label>
+                                        <input id="unfamiliar" type="radio" name="breed_features" value="unfamiliar"
+                                               checked>
+                                        <label for="unfamiliar">Не знаком</label>
+                                    </div>
+                                </div>
+
+                                <h6>Окрас:</h6>
+                                <div class="form_radio_group ">
+                                    <div class="form_radio_group-item">
+                                        <input id="" type="radio" name="color" value="" checked>
+                                        <label for="">не имеет значения</label>
+                                        <input id="black_white" type="radio" name="color" value="black_white">
+                                        <label for="black_white">чёрно-белый</label>
+                                        <input id="gray_white" type="radio" name="color" value="gray_white">
+                                        <label for="gray_white">серо-белый</label>
+                                        <input id="red_white" type="radio" name="color" value="red_white">
+                                        <label for="red_white">рыже-белый</label>
+                                    </div>
+                                </div>
+                                <h6>Цвет глаз:</h6>
+                                <div class="form_radio_group">
+                                    <div class="form_radio_group-item">
+                                        <input id="" type="radio" name="eye_color" value=""  checked>
+                                        <label for="">не имеет значения</label>
+                                        <input id="blue" type="radio" name="eye_color" value="blue">
+                                        <label for="blue">голубые</label>
+                                        <input id="brown" type="radio" name="eye_color" value="brown">
+                                        <label for="brown">карие</label>
+                                        <input id="harlequin" type="radio" name="eye_color" value="harlequin">
+                                        <label for="harlequin">арлекин</label>
+                                        <input id="mosaic" type="radio" name="eye_color" value="mosaic">
+                                        <label for="mosaic">мозайка</label>
+                                    </div>
+                                </div>
+
+                                <h6>С собакой буду заниматься:</h6>
+                                <div class="form_radio_group">
+                                    <div class="form_radio_group-item">
+                                        <input id="sport" type="radio" name="activity_with_dog" value="sport">
+                                        <label for="sport">спорт</label>
+                                        <input id="exhibitions" type="radio" name="activity_with_dog"
+                                               value="exhibitions">
+                                        <label for="exhibitions">выставки</label>
+                                        <input id="outdoor_recreation" type="radio" name="activity_with_dog"
+                                               value="outdoor_recreation">
+                                        <label for="outdoor_recreation">отдых на природе</label>
+                                        <input id="other_activity_with_dog" type="radio" name="activity_with_dog"
+                                               value="other_activity_with_dog"  checked>
+                                        <label for="other_activity_with_dog">другое</label>
+                                    </div>
+                                </div>
+
+                                <h6>Вы проживаете в:</h6>
+                                <div class="form_radio_group">
+                                    <div class="form_radio_group-item">
+                                        <input id="apartment_residence_type" type="radio" name="residence_type"
+                                               value="apartment_residence_type"  checked>
+                                        <label for="apartment_residence_type">квартире</label>
+                                        <input id="own_house_residence_type" type="radio" name="residence_type"
+                                               value="own_house_residence_type">
+                                        <label for="own_house_residence_type">собственном доме</label>
+                                        <input id="other_residence_type_residence_type" type="radio"
+                                               name="residence_type" value="other_residence_type_residence_type">
+                                        <label for="other_residence_type_residence_type">другое</label>
+                                    </div>
+                                </div>
+
+                                <h6>Ранее вы держали собаку? Есть опыт?</h6>
+                                <div class="form_radio_group">
+                                    <div class="form_radio_group-item">
+                                        <input id="yes" type="radio" name="dog_experience" value="yes">
+                                        <label for="yes">Да</label>
+                                        <input id="no" type="radio" name="dog_experience" value="no" checked>
+                                        <label for="no">Нет</label>
+                                    </div>
+                                </div>
+
+                                <h6><label for="comment">Комментарий (уточнение, пояснение, вопрос и др.):</label></h6>
+                                <textarea rows="4" cols="50" class="form-control"></textarea>
+                            </div>
+                            <p><input type="submit" value="Submit"></p>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- end cart -->
+{% endblock %}

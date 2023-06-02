@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Новость</p>
+                        <h1>{{ post.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- single article section -->
+    <div class="mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="single-article-section">
+                        <div class="single-article-text">
+                            {% if post.photo %}
+                                <img src="{{ post.photo.url }}" class="latest-news-bg" style="height: 400px;">
+                            {% else %}
+                                <div class="single-artcile-bg"></div>
+                            {% endif %}
+
+                            <p class="blog-meta">
+                                <span class="date"><i class="fas fa-calendar"></i>{{ post.created_at }}</span>
+                            </p>
+                            <h2>{{ post.title }}</h2>
+                            {{ post.description| safe }}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar-section">
+                        <div class="recent-posts">
+                            <h4>Recent Posts</h4>
+                            <ul>
+                                {% for post in posts %}
+                                    <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end single article section -->
+{% endblock %}

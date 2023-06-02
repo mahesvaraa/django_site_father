@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Питомец</p>
+                        <h1>{{ dog.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+    <!-- single product -->
+    <div class="single-product mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="single-product-img">
+                        <img src={{ dog.photo.url }} alt="">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="single-product-content">
+                        <h3>{{ dog.title }}</h3>
+                        <p class="single-product-pricing"><span>{{ dog.short_description }}</span></p>
+                        <p>{{ dog.description|safe }}.</p>
+                        <div class="single-product-form">
+
+                            <a href="receipt.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            <p><strong>Categories: </strong>Fruits, Organic</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end single product -->
+
+    <!-- more products -->
+    <div class="more-products mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title">
+                        <h3><span class="orange-text">Другие</span> питомцы</h3>
+                        <p>Не определились? Можете рассмотреть других</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card-columns">
+                    {% for doge in dogs %}
+                        <div class="card single-latest-news">
+                            <a href="{{ doge.get_absolute_url }}">
+                                <img class="card-img-top"
+                                     src="{{ doge.photo.url }}"
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ doge.title }}</h5>
+                                    <p class="card-text">
+                                        {{ doge.short_description }}
+                                    </p>
+
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end more products -->
+{% endblock %}
