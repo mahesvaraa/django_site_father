@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'ckeditor',
     'ckeditor_uploader',
-    'django_mailbox',
+    #'django_mailbox',
     'dog_site.apps.DogSiteConfig'
 ]
 
