@@ -1,0 +1,12 @@
+asgiref
+Django
+django-ckeditor
+django-debug-toolbar
+django-js-asset
+django-mailbox
+django-multiupload
+Pillow==8.0.0
+pytz
+six
+sqlparse
+tzdata

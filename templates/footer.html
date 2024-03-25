@@ -1,47 +1,53 @@
 {% block footer %}
-<div class="footer-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-box about-widget">
-                    <h2 class="widget-title">About us</h2>
-                    <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                        doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2 class="widget-title">О нас</h2>
+                        <p>BIZBURI IDEL</p>
+                        <p>Разводим  любимых питомцев с 20ХХ года!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-box get-in-touch">
-                    <h2 class="widget-title">Get in Touch</h2>
-                    <ul>
-                        <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-                        <li>support@fruitkha.com</li>
-                        <li>+00 111 222 3333</li>
-                    </ul>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2 class="widget-title">Как нас найти</h2>
+                        <ul>
+                            <li>445599, Самарская область
+                                Хворостянский район
+                                с. Абашево
+                                ул. Орловская, д. 25
+                            </li>
+                            <li>ПН - ВС: 10:00 - 19:00</li>
+                            <li>+7 (967) 727-38-28</li>
+                            <li>+7 (909) 323-38-30</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-box pages">
-                    <h2 class="widget-title">Pages</h2>
-                    <ul>
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="/dog_site/templates/about.html">About</a></li>
-                        <li><a href="services.html">Shop</a></li>
-                        <li><a href="{% url 'news' %}">News</a></li>
-                        <li><a href="/dog_site/templates/contact.html">Contact</a></li>
-                    </ul>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box pages">
+                        <h2 class="widget-title">Страницы</h2>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Главная</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'dogs' %}">Питомцы</a></li>
+                            <li><a href="{% url 'news' %}">Новости</a></li>
+                            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-box subscribe">
-                    <h2 class="widget-title">Subscribe</h2>
-                    <p>Subscribe to our mailing list to get the latest updates.</p>
-                    <form action="/dog_site/templates/index.html">
-                        <input type="email" placeholder="Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+                <!--
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box subscribe">
+                        <h2 class="widget-title">Subscribe</h2>
+                        <p>Subscribe to our mailing list to get the latest updates.</p>
+                        <form action="/dog_site/templates/index.html">
+                            <input type="email" placeholder="Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>-->
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
